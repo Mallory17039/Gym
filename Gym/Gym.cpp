@@ -24,9 +24,8 @@ int main()
 		cout << " 1. Display  Members' Information\n";
 		cout << " 2. Create the Member\n";
 		cout << " 3. Delete the Member\n";
-		cout << " 4. Calculate Membership period\n";
+		cout << " 4. Calculate Remaining Membership Days\n";
 		cout << " 5. Add health information to an Membership\n";
-		cout << " 6. Update Member's Information\n";
 		cout << "Your choice: ";
 		cin >> choice;
 		switch (choice)
@@ -57,12 +56,10 @@ int main()
 		}
 		case 4:
 			// Calculate Memebrship period
-			cal();
+			mem.cal_period(members);
 			break;
 		case 5:
 			mem.add_Health(members);
-			break;
-		case 6:
 			break;
 		case 0:
 			mem.quit();

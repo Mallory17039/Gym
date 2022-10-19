@@ -25,7 +25,13 @@ private:
 
 	std::shared_ptr<Health> health_info;
 
-	//constructor
+	int y1;
+	int y2;
+	int m1;
+	int m2;
+	int d1;
+	int d2;
+
 public:
 
 	Membership();
@@ -33,6 +39,8 @@ public:
 	Membership(string name, string sex, int age);
 
 	int get_id() const;
+
+	int cal_period(list<Membership>& member_list);
 
 	//void update_member(list<Membership>& member_list);
 
