@@ -49,33 +49,11 @@ void Membership::create_membership(list<Membership>& member_list) {
 	member_list.push_back(Membership);
 }
 
-list<Membership>::iterator find_ID(list<Membership>& member_list, int MembershipID) {
-	list<Membership>::iterator it;
-	for (it = member_list.begin(); it != member_list.end(); it++)
-	{
-		if (it->get_id() == MembershipID)
-		{
-			return it;
-		}
-	}
-	return it;
-}
 
 // This logic inspired by https://stackoverflow.com/questions/14218894/number-of-days-between-two-dates-c/14219008#14219008
-int Membership::cal_period(list<Membership>& member_list) {
-
+int Membership::cal_period() {
 	auto now = std::chrono::system_clock::now();
 	std::time_t current_time = std::chrono::system_clock::to_time_t(now);
-
-	cout << "Enter and ID to search for: ";
-	cin >> MembershipID;
-	list<Membership>::iterator it;
-	it = find_ID(member_list, MembershipID);
-
-	if (it == member_list.end()) {
-		cout << "*** Can't find the ID *** " << endl;
-		return 0;
-	}
 
 	y1 = y1 - 1900;
 	y2 = y2 - 1900;
@@ -121,23 +99,10 @@ void Membership::display() const
 	}
 }
 
-void Membership::add_Info(list<Membership>& member_list) {
-	cout << "Enter and ID to search for: ";
-	cin >> MembershipID;
-	list<Membership>::iterator it;
-	it = find_ID(member_list, MembershipID);
-
-	if (it != member_list.end()) {
-		// found a member with that ID
-		cout << "*** Found the ID ***" << endl;
-		it->display();
-	}
-	else {
-		cout << "*** Can't find the ID *** " << endl;
-	}
-
-	it->Info_info = std::make_shared<Info>();
-	it->Info_info->initialize();
+void Membership::add_Info() {
+	display();
+	Info_info = std::make_shared<Info>();
+	Info_info->initialize();
 }
 
 void Membership::display_all(list<Membership>& member_list) {

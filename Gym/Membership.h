@@ -41,13 +41,13 @@ public:
 
 	int get_id() const;
 
-	int cal_period(list<Membership>& member_list);
+	int cal_period();
 
 	void create_membership(list<Membership>& member_list);
 
 	void display() const;
 
-	void add_Info(list<Membership>& member_list);
+	void add_Info();
 
 	void display_all(list<Membership>& member_list);
 

@@ -8,12 +8,27 @@
 
 using namespace std;
 
+
+list<Membership>::iterator find_ID(list<Membership>& member_list, int MembershipID) {
+	list<Membership>::iterator it;
+	for (it = member_list.begin(); it != member_list.end(); it++)
+	{
+		if (it->get_id() == MembershipID)
+		{
+			return it;
+		}
+	}
+	return it;
+}
+
 int main()
 {
 	Membership mem;
 	int choice;
 	string name;
 	list<Membership> members;
+	list<Membership>::iterator it;
+	int membershipID;
 
 	do
 	{
@@ -45,11 +60,10 @@ int main()
 			break;
 		case 3:
 		{	//remove Membership
-			float remove_id;
 			cout << "Enter Membership ID to remove: ";
-			cin >> remove_id;
-			auto new_end = remove_if(members.begin(), members.end(), [remove_id](auto& mem) {
-				return mem.get_id() == remove_id;
+			cin >> membershipID;
+			auto new_end = remove_if(members.begin(), members.end(), [membershipID](auto& mem) {
+				return mem.get_id() == membershipID;
 				}
 			);
 			members.erase(new_end, members.end());
@@ -57,10 +71,28 @@ int main()
 		}
 		case 4:
 			// Calculate Memebrship period
-			mem.cal_period(members);
+			cout << "Enter and ID to search for: ";
+			cin >> membershipID;
+			it = find_ID(members, membershipID);
+
+			if (it == members.end()) {
+				cout << "*** Can't find the ID *** " << endl;
+				return 0;
+			}
+
+			it->cal_period();
 			break;
 		case 5:
-			mem.add_Info(members);
+			cout << "Enter and ID to search for: ";
+			cin >> membershipID;
+			it = find_ID(members, membershipID);
+
+			if (it == members.end()) {
+				cout << "*** Can't find the ID *** " << endl;
+				return 0;
+			}
+			cout << "*** Found the ID ***" << endl;
+			it->add_Info();
 			break;
 		case 0:
 			mem.quit();
