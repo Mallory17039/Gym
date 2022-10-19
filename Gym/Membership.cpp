@@ -55,14 +55,14 @@ int Membership::cal_period() {
 	auto now = std::chrono::system_clock::now();
 	std::time_t current_time = std::chrono::system_clock::to_time_t(now);
 
-	y1 = y1 - 1900;
-	y2 = y2 - 1900;
+	int y1_copy = y1 - 1900;
+	int y2_copy = y2 - 1900;
 
-	m1 = m1 - 1;
-	m2 = m2 - 1;
+	int m1_copy = m1 - 1;
+	int m2_copy = m2 - 1;
 
-	struct std::tm a = { 0,0,0,d1,m1,y1 };
-	struct std::tm b = { 0,0,0,d2,m2,y2 };
+	struct std::tm a = { 0, 0, 0, d1, m1_copy, y1_copy };
+	struct std::tm b = { 0, 0, 0, d2, m2_copy, y2_copy };
 	std::time_t x = std::mktime(&a);
 	std::time_t y = std::mktime(&b);
 
@@ -79,8 +79,6 @@ int Membership::cal_period() {
 		std::cout << "Total Remaining Membership Days = " << remain << " days" << std::endl;
 
 		double difference = std::difftime(y, x) / (60 * 60 * 24);
-		//std::cout << std::ctime(&x);
-		//std::cout << std::ctime(&y);
 		std::cout << "Total membership period = " << difference << " days" << std::endl;
 
 		return (int)difference;

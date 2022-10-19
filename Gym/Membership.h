@@ -23,9 +23,6 @@ private:
 
 	std::shared_ptr<Info> Info_info;
 
-	int ty;
-	int tm;
-	int td;
 	int y1;
 	int y2;
 	int m1;

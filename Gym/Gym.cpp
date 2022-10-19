@@ -41,7 +41,7 @@ int main()
 		cout << " 2. Create the Member\n";
 		cout << " 3. Delete the Member\n";
 		cout << " 4. Calculate Remaining Membership Days\n";
-		cout << " 5. Cancle the Membership\n";
+		cout << " 5. Cancel the Membership\n";
 		cout << "Your choice: ";
 		cin >> choice;
 		switch (choice)
