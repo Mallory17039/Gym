@@ -77,7 +77,6 @@ int main()
 
 			if (it == members.end()) {
 				cout << "*** Can't find the ID *** " << endl;
-				return 0;
 			}
 
 			it->cal_period();
@@ -89,7 +88,6 @@ int main()
 
 			if (it == members.end()) {
 				cout << "*** Can't find the ID *** " << endl;
-				return 0;
 			}
 			cout << "*** Found the ID ***" << endl;
 			it->add_Info();
