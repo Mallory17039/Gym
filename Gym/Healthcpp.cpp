@@ -28,8 +28,8 @@ void Health::initialize() {
 //output method
 void Health::cdisplay() const
 {
-	cout << "+ Health Information Updated on: " << update_date << endl;
-	cout << "  Description: " << description << endl;
+	cout << "     + Health Information Updated on: " << update_date << endl;
+	cout << "       Description: " << description << endl;
 }
 
 void Health::display_all(list<Health>& member_list) {

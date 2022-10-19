@@ -133,7 +133,6 @@
     <ClCompile Include="Membership.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cal_date.h" />
     <ClInclude Include="Health.h" />
     <ClInclude Include="Membership.h" />
   </ItemGroup>

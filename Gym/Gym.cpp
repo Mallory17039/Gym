@@ -1,3 +1,5 @@
+// Author : Mallory Lee
+
 #include <iostream>
 #include "Membership.h"
 #include <list>

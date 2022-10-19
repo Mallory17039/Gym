@@ -16,8 +16,6 @@ private:
 	int MembershipID = 1;
 	static int next_ID;
 	float period;
-	string start_date;
-	string current_date;
 	int days;
 
 	int choice;
@@ -25,6 +23,9 @@ private:
 
 	std::shared_ptr<Health> health_info;
 
+	int ty;
+	int tm;
+	int td;
 	int y1;
 	int y2;
 	int m1;
@@ -36,13 +37,11 @@ public:
 
 	Membership();
 
-	Membership(string name, string sex, int age);
+	Membership(string name, string sex, int age, int y1, int m1, int d1, int y2, int m2, int d2);
 
 	int get_id() const;
 
 	int cal_period(list<Membership>& member_list);
-
-	//void update_member(list<Membership>& member_list);
 
 	void create_membership(list<Membership>& member_list);
 
@@ -53,7 +52,5 @@ public:
 	void display_all(list<Membership>& member_list);
 
 	void quit();
-
-	// void cal_period();
 
 };

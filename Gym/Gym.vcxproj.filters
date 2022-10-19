@@ -32,8 +32,5 @@
     <ClInclude Include="Health.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cal_date.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
