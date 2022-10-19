@@ -5,7 +5,6 @@
 #include <list>
 #include <algorithm>
 #include <numeric>
-#include "cal_date.h"
 
 using namespace std;
 
@@ -27,7 +26,7 @@ int main()
 		cout << " 2. Create the Member\n";
 		cout << " 3. Delete the Member\n";
 		cout << " 4. Calculate Remaining Membership Days\n";
-		cout << " 5. Add health information to an Membership\n";
+		cout << " 5. Cancle the Membership\n";
 		cout << "Your choice: ";
 		cin >> choice;
 		switch (choice)
@@ -61,7 +60,7 @@ int main()
 			mem.cal_period(members);
 			break;
 		case 5:
-			mem.add_Health(members);
+			mem.add_Info(members);
 			break;
 		case 0:
 			mem.quit();

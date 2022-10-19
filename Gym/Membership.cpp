@@ -10,12 +10,12 @@
 
 int Membership::next_ID = 0;
 
-Membership::Membership() : name(""), sex(""), age(0), MembershipID(next_ID++), y1(0), y2(0), m1(0), m2(0), d1(0), d2(0), health_info(nullptr)
+Membership::Membership() : name(""), sex(""), age(0), MembershipID(next_ID++), y1(0), y2(0), m1(0), m2(0), d1(0), d2(0), Info_info(nullptr)
 {
 }
 
-Membership::Membership(string name, string sex, int age, int y1, int m1, int d1, int y2, int m2, int d3) :
-	name(name), sex(sex), age(age), MembershipID(next_ID++), y1(y1), y2(y2), m1(m1), m2(m2), d1(d1), d2(d2), health_info(nullptr)
+Membership::Membership(string name, string sex, int age, int y1, int m1, int d1, int y2, int m2, int d2) :
+	name(name), sex(sex), age(age), MembershipID(next_ID++), y1(y1), y2(y2), m1(m1), m2(m2), d1(d1), d2(d2), Info_info(nullptr)
 {
 }
 
@@ -66,7 +66,6 @@ int Membership::cal_period(list<Membership>& member_list) {
 
 	auto now = std::chrono::system_clock::now();
 	std::time_t current_time = std::chrono::system_clock::to_time_t(now);
-	std::cout << "Current Time and Date: " << std::ctime(&current_time) << std::endl;
 
 	cout << "Enter and ID to search for: ";
 	cin >> MembershipID;
@@ -98,7 +97,7 @@ int Membership::cal_period(list<Membership>& member_list) {
 	{
 		double remain = std::difftime(y, current_time) / (60 * 60 * 24);
 		std::cout << "Current Date: " << std::ctime(&current_time);
-		std::cout << "End Dat: e" << std::ctime(&y);
+		std::cout << "End Date: " << std::ctime(&y);
 		std::cout << "Total Remaining Membership Days = " << remain << " days" << std::endl;
 
 		double difference = std::difftime(y, x) / (60 * 60 * 24);
@@ -116,13 +115,13 @@ void Membership::display() const
 	cout << "Membership ID: " << MembershipID << " Name: " << name << " Sex: " << sex << " Age: " << age << endl;
 	cout << "     Membership Start Date: " << y1 << "/" << m1 << "/" << d1 << endl;
 	cout << "     Membership End Date: " << y2 << "/" << m2 << "/" << d2 << endl;
-	if (health_info != nullptr)
+	if (Info_info != nullptr)
 	{
-		health_info->cdisplay();
+		Info_info->cdisplay();
 	}
 }
 
-void Membership::add_Health(list<Membership>& member_list) {
+void Membership::add_Info(list<Membership>& member_list) {
 	cout << "Enter and ID to search for: ";
 	cin >> MembershipID;
 	list<Membership>::iterator it;
@@ -137,8 +136,8 @@ void Membership::add_Health(list<Membership>& member_list) {
 		cout << "*** Can't find the ID *** " << endl;
 	}
 
-	it->health_info = std::make_shared<Health>();
-	it->health_info->initialize();
+	it->Info_info = std::make_shared<Info>();
+	it->Info_info->initialize();
 }
 
 void Membership::display_all(list<Membership>& member_list) {

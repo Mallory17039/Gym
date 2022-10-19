@@ -4,21 +4,21 @@
 #include <list>
 using namespace std;
 
-class Health
+class Info
 {
 private:
-	int HealthID = -1;
-	static int next_HealthID;
+	int InfoID = -1;
+	static int next_InfoID;
 	int IDinput;
 
 	string description;
 	string update_date;
 public:
 
-	Health();
-	Health(string description, string date);
+	Info();
+	Info(string description, string date);
 	void initialize();
 	void cdisplay() const;
-	void display_all(list<Health>& member_list);
+	void display_all(list<Info>& member_list);
 
 };

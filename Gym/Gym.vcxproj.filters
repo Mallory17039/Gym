@@ -21,7 +21,7 @@
     <ClCompile Include="Membership.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Healthcpp.cpp">
+    <ClCompile Include="Info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="Membership.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Health.h">
+    <ClInclude Include="Info.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

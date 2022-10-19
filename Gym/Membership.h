@@ -1,5 +1,5 @@
 #pragma once
-#include "Health.h"
+#include "Info.h"
 #include <string>
 #include <iostream>
 #include <list>
@@ -21,7 +21,7 @@ private:
 	int choice;
 	string confirm = "n";
 
-	std::shared_ptr<Health> health_info;
+	std::shared_ptr<Info> Info_info;
 
 	int ty;
 	int tm;
@@ -47,7 +47,7 @@ public:
 
 	void display() const;
 
-	void add_Health(list<Membership>& member_list);
+	void add_Info(list<Membership>& member_list);
 
 	void display_all(list<Membership>& member_list);
 
